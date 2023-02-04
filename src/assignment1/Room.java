@@ -7,7 +7,7 @@ public class Room {
     private boolean available;
 
 
-    public Room() {
+    public Room(String type) {
 
         switch (type) {
             case "double":
@@ -23,7 +23,7 @@ public class Room {
                 throw new IllegalArgumentException("No room of such type can be created.");
         }
 
-        /* Ask if the following snippet will run if the exception is thrown */
+        
         this.type = type;
 
         this.available = true;
