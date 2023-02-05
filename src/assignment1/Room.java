@@ -39,7 +39,7 @@ public class Room {
 
     public int getPrice() { return this.cost; }
 
-    public boolean getAvailability() { return this.available;}
+    public boolean getAvailability() { return this.available; }
 
     public void changeAvailability() { this.available = !this.available; }
 
