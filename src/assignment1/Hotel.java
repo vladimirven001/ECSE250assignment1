@@ -26,8 +26,7 @@ public class Hotel {
 
     public boolean cancelRoom(String type) {
         for (int i = 0; i < r.length; i++) {
-            if (r[i].getType() == type && r[i].getAvailability() == false) {
-                r[i].changeAvailability();
+            if (Room.makeRoomAvailable(r, type)) {
                 return true;
             }
         }
