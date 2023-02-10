@@ -35,9 +35,9 @@ public class HotelReservation extends Reservation {
         if(o instanceof HotelReservation && ((HotelReservation)o).reservationName() == this.reservationName()
                 && ((HotelReservation)o).h == this.h && ((HotelReservation)o).type == this.type
                 && ((HotelReservation)o).nights == this.nights && ((HotelReservation)o).getCost() == this.getCost()) {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
 

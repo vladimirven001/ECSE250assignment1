@@ -284,50 +284,50 @@ class ReservationTest {     // 2 points
     }
 }
 
-//class HotelReservationTest {    // 4 points
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("HotelReservation getNumOfNights() Test1")
-//    void getNumOfNights() {
-//        Room[] rooms = {new Room("double")};
-//        Hotel hotel1 = new Hotel("Hotel1", rooms);
-//        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
-//        assertEquals(2, hotelReservation1.getNumOfNights(),
-//                "HotelReservation: getNumOfNights() returns the wrong number of nights.");
-//    }
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("HotelReservation getCost() Test1")
-//    void getCost() {
-//        Room[] rooms = {new Room("double")};
-//        Hotel hotel1 = new Hotel("Hotel1", rooms);
-//        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
-//        assertEquals(18000, hotelReservation1.getCost(),
-//                "HotelReservation: getCost() returns the wrong cost.");
-//    }
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("HotelReservation equals() Test1")
-//    void testEquals1() {
-//        Room[] rooms = {new Room("double")};
-//        Hotel hotel1 = new Hotel("Hotel1", rooms);
-//        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
-//        HotelReservation hotelReservation2 = hotelReservation1;
-//
-//        assertTrue(hotelReservation1.equals(hotelReservation2),
-//                "HotelReservation: equals() returns the wrong value.");
-//    }
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("HotelReservation equals() Test2")
-//    void testEquals2() {
-//        Room[] rooms = {new Room("double"), new Room("king")};
-//        Hotel hotel1 = new Hotel("Hotel1", rooms);
-//        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
-//        HotelReservation hotelReservation2 = new HotelReservation("Bob", hotel1, "king", 1);
-//        assertFalse(hotelReservation1.equals(hotelReservation2), "HotelReservation: equals() returns the wrong value");
-//    }
-//}
+class HotelReservationTest {    // 4 points
+
+    @Test
+    @Tag("score:1") @DisplayName("HotelReservation getNumOfNights() Test1")
+    void getNumOfNights() {
+        Room[] rooms = {new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
+        assertEquals(2, hotelReservation1.getNumOfNights(),
+                "HotelReservation: getNumOfNights() returns the wrong number of nights.");
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("HotelReservation getCost() Test1")
+    void getCost() {
+        Room[] rooms = {new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
+        assertEquals(18000, hotelReservation1.getCost(),
+                "HotelReservation: getCost() returns the wrong cost.");
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("HotelReservation equals() Test1")
+    void testEquals1() {
+        Room[] rooms = {new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
+        HotelReservation hotelReservation2 = hotelReservation1;
+
+        assertTrue(hotelReservation1.equals(hotelReservation2),
+                "HotelReservation: equals() returns the wrong value.");
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("HotelReservation equals() Test2")
+    void testEquals2() {
+        Room[] rooms = {new Room("double"), new Room("king")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+        HotelReservation hotelReservation1 = new HotelReservation("Alex", hotel1, "double", 2);
+        HotelReservation hotelReservation2 = new HotelReservation("Bob", hotel1, "king", 1);
+        assertFalse(hotelReservation1.equals(hotelReservation2), "HotelReservation: equals() returns the wrong value");
+    }
+}
 
 class FlightReservationTest {   // 3 points
 
