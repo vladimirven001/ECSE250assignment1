@@ -1,4 +1,44 @@
 package assignment1;
 
-public class HotelReservation {
+public class HotelReservation extends Reservation {
+
+    private Hotel h;
+
+    private String type;
+
+    private int nights;
+
+    private int price;
+
+    public HotelReservation(String name, Hotel h, String type, int nights) {
+
+        super(name);
+
+        this.h = h;
+        this.type = type;
+        this.nights = nights;
+
+        try {
+            this.price = h.reserveRoom(this.type);
+        }
+        catch(NullPointerException e) {
+            throw new IllegalArgumentException();
+        }
+
+    }
+
+    public int getNumOfNights() { return this.nights; }
+
+    public int getCost() { return this.price * this.nights; }
+
+    public boolean equals(Object o) {
+        if(o instanceof HotelReservation && ((HotelReservation)o).reservationName() == this.reservationName()
+                && ((HotelReservation)o).h == this.h && ((HotelReservation)o).type == this.type
+                && ((HotelReservation)o).nights == this.nights && ((HotelReservation)o).getCost() == this.getCost()) {
+            return false;
+        }
+        return true;
+    }
+
+
 }
