@@ -1,6 +1,6 @@
 package assignment1;
 
-// To make the tester work, you might need to setUp some import libraries. To do so:
+// To make the tester work, you might need to set Up some import libraries. To do so:
     // 1: Hover over the red text saying junit (or other libraries that are red)
     // 2: click add to classpath or import statement (depends on the IDE)
 import org.junit.jupiter.api.*;
