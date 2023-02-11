@@ -55,8 +55,11 @@ public class Customer {
 
     public int addToBasket(Airport a1, Airport a2) {
         Reservation r;
-        r = new FlightReservation(name, a1, a2);
-        return basket.getNumOfReservations();
+        try {
+            r = new FlightReservation(name, a1, a2);
+        } finally {
+            return basket.getNumOfReservations();
+        }
     }
 
     public boolean removeFromBasket(Reservation r) {
