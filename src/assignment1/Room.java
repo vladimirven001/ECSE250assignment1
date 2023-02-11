@@ -8,24 +8,16 @@ public class Room {
 
 
     public Room(String type) {
-
-        switch (type) {
-            case "double":
-                this.cost = 9000;
-                break;
-            case "queen":
-                this.cost = 11000;
-                break;
-            case "king":
-                this.cost = 15000;
-                break;
-            default:
-                throw new IllegalArgumentException("No room of such type can be created.");
+        if (type.equalsIgnoreCase("double")) {
+            this.cost = 9000;
+        } else if(type.equalsIgnoreCase("queen")) {
+            this.cost = 11000;
+        } else if (type.equalsIgnoreCase("king")) {
+            this.cost = 15000;
+        } else {
+            throw new IllegalArgumentException("No room of such type can be created.");
         }
-
-        
         this.type = type;
-
         this.available = true;
     }
 
@@ -39,13 +31,13 @@ public class Room {
 
     public int getPrice() { return cost; }
 
-    public boolean getAvailability() { return this.available; }
+    public boolean getAvailability() { return available; }
 
-    public void changeAvailability() { this.available = !this.available; }
+    public void changeAvailability() { available = !available; }
 
     public static Room findAvailableRoom(Room[] r, String type) {
         for (int i = 0; i < r.length; i++) {
-            if (r[i].type == type && r[i].available == true) {
+            if (r[i] != null && r[i].type.equalsIgnoreCase(type) && r[i].available == true) {
                 return r[i];
             }
         }
@@ -54,7 +46,7 @@ public class Room {
 
     public static boolean makeRoomAvailable(Room[] r, String type) {
         for (int i = 0; i < r.length; i++) {
-            if (r[i].type == type && r[i].available == false) {
+            if (r[i] != null && r[i].type.equalsIgnoreCase(type) && r[i].available == false) {
                 r[i].available = true;
                 return true;
             }

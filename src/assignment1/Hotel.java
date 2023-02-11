@@ -20,8 +20,12 @@ public class Hotel {
 
     public int reserveRoom(String type) {
         Room r1 = Room.findAvailableRoom(r, type);
-        r1.changeAvailability();
-        return r1.getPrice();
+        if (r1 != null) {
+            r1.changeAvailability();
+            return r1.getPrice();
+        } else {
+            throw new IllegalArgumentException("No room of such type is available.");
+        }
     }
 
     public boolean cancelRoom(String type) {

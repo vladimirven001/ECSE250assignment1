@@ -30,7 +30,7 @@ public class Basket {
         int index = -1;
         int length = this.r.length;
         for (int i = 0; i < length; i++) {
-            if (this.r[i].equals(r)) {
+            if (index == -1 && this.r[i].equals(r)) {
                 index = i;
             }
         }
@@ -39,11 +39,11 @@ public class Basket {
         }
         Reservation[] newArr = new Reservation[length - 1];
 
-        for (int i = 0; i < length - 1; i++) {
+        for (int i = 0; i < length; i++) {
             if (i < index) {
                 newArr[i] = this.r[i];
             } else if (i > index) {
-                newArr[i] = this.r[i + 1];
+                newArr[i - 1] = this.r[i];
             }
         }
         this.r = newArr;
