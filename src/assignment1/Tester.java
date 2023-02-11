@@ -368,143 +368,143 @@ class FlightReservationTest {   // 3 points
     }
 }
 
-//class BnBReservationTest {      // 2 points
-//    @Test
-//    @Tag("score:1") @DisplayName("BnBReservation reservationName() Test1")
-//    void reservationName() {
-//        Room[] rooms = {new Room("double")};
-//        Hotel hotel1 = new Hotel("Hotel1", rooms);
-//
-//        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
-//        assertEquals("Alex", bnBReservation.reservationName(),
-//                "BnBReservation: getCost() returns the wrong name.");
-//    }
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("BnBReservation getCost() Test1")
-//    void getCost() {
-//        Room[] rooms = {new Room("double")};
-//        Hotel hotel1 = new Hotel("Hotel1", rooms);
-//
-//        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
-//        assertEquals(20000, bnBReservation.getCost(),
-//                "BnBReservation: getCost() returns the wrong value.");
-//    }
-//}
+class BnBReservationTest {      // 2 points
+    @Test
+    @Tag("score:1") @DisplayName("BnBReservation reservationName() Test1")
+    void reservationName() {
+        Room[] rooms = {new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+
+        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
+        assertEquals("Alex", bnBReservation.reservationName(),
+                "BnBReservation: getCost() returns the wrong name.");
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("BnBReservation getCost() Test1")
+    void getCost() {
+        Room[] rooms = {new Room("double")};
+        Hotel hotel1 = new Hotel("Hotel1", rooms);
+
+        BnBReservation bnBReservation = new BnBReservation("Alex", hotel1, "double", 2);
+        assertEquals(20000, bnBReservation.getCost(),
+                "BnBReservation: getCost() returns the wrong value.");
+    }
+}
 
 
-//class BasketTest {      // 7 points
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("Basket add() Test1")
-//    void addTest1() {
-//        Basket basket = new Basket();
-//        Reservation reservation1 = new BasketTest.FakeReservation("Alex");
-//        Reservation reservation2 = new BasketTest.FakeReservation("Bob");
-//
-//        int number = basket.add(reservation1);
-//        number = basket.add(reservation2);
-//
-//        assertEquals(2, number,
-//                "Basket: add() returns the wrong number of reservations now in the basket.");
-//    }
-//
-//    @Test
-//    @Tag("score:2") @DisplayName("Basket getProducts() Test1")
-//    void getProducts2() {
-//        Basket basket = new Basket();
-//        HotelReservation hotelReservation1 = new HotelReservation("Alex", new Hotel("Hotel1", new Room[]{new Room("double")}), "double", 2);
-//        FlightReservation flightReservation1 = new FlightReservation("Bob", new Airport(44, 120, 100), new Airport(50, 112, 110));
-//
-//        basket.add(hotelReservation1);
-//        basket.add(flightReservation1);
-//
-//        Reservation[] expected = {hotelReservation1, flightReservation1};
-//        Reservation[] output = basket.getProducts();
-//
-//        for (int i = 0; i < expected.length; i++) {
-//            assertEquals(expected[i], output[i],
-//                    "Basket: getProducts() returns the wrong order of reservations.");
-//        }
-//    }
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("Basket getNumOfReservations Test1")
-//    void getNumOfReservations() {
-//        Basket basket1 = new Basket();
-//        Reservation reservation1 = new BasketTest.FakeReservation("Alex");
-//        Reservation reservation2 = new BasketTest.FakeReservation("Bob");
-//
-//        basket1.add(reservation1);
-//        basket1.add(reservation2);
-//
-//        assertEquals(2, basket1.getNumOfReservations(),
-//                "Basket: getNumOfReservations() returns the wrong number of reservations");
-//    }
-//
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("Basket remove() Test1")
-//    void remove() {
-//        Basket basket1 = new Basket();
-//        Airport airport1 = new Airport(44, 120, 100);
-//        Airport airport2 = new Airport(50, 112, 110);
-//        FlightReservation reservation1 = new FlightReservation("Alex", airport1, airport2);
-//
-//        basket1.add(reservation1);
-//
-//        boolean test = basket1.remove(reservation1);
-//
-//        assertEquals(0, basket1.getNumOfReservations(),
-//                "Basket: remove() didn't remove the reservation");
-//
-//        assertTrue(test, "Basket: remove() returns the wrong value");
-//
-//    }
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("Basket clear() Test1")
-//    void clear() {
-//        Basket basket1 = new Basket();
-//        Reservation reservation1 = new BasketTest.FakeReservation("Alex");
-//        basket1.add(reservation1);
-//        basket1.add(reservation1);
-//        basket1.clear();
-//        assertEquals(0, basket1.getNumOfReservations(),
-//                "Basket: clear() doesn't clear the array of reservations in the basket");
-//    }
-//
-//
-//    @Test
-//    @Tag("score:1") @DisplayName("Basket getTotalCost Test1")
-//    void getTotalCost() {
-//        Basket basket1 = new Basket();
-//        Airport airport1 = new Airport(44, 120, 100);
-//        Airport airport2 = new Airport(50, 112, 110);
-//        FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
-//        basket1.add(flightReservation1);
-//        basket1.add(flightReservation1);
-//
-//        assertEquals(11186, basket1.getTotalCost(),
-//                "Basket: getTotalCost() returns the wrong cost.");
-//    }
-//
-//    private static class FakeReservation extends Reservation {
-//
-//        public FakeReservation(String name) {
-//            super(name);
-//        }
-//
-//        @Override
-//        public int getCost() {
-//            return 0;
-//        }
-//
-//        @Override
-//        public boolean equals(Object o) {
-//            return false;
-//        }
-//    }
-//}
+class BasketTest {      // 7 points
+
+    @Test
+    @Tag("score:1") @DisplayName("Basket add() Test1")
+    void addTest1() {
+        Basket basket = new Basket();
+        Reservation reservation1 = new BasketTest.FakeReservation("Alex");
+        Reservation reservation2 = new BasketTest.FakeReservation("Bob");
+
+        int number = basket.add(reservation1);
+        number = basket.add(reservation2);
+
+        assertEquals(2, number,
+                "Basket: add() returns the wrong number of reservations now in the basket.");
+    }
+
+    @Test
+    @Tag("score:2") @DisplayName("Basket getProducts() Test1")
+    void getProducts2() {
+        Basket basket = new Basket();
+        HotelReservation hotelReservation1 = new HotelReservation("Alex", new Hotel("Hotel1", new Room[]{new Room("double")}), "double", 2);
+        FlightReservation flightReservation1 = new FlightReservation("Bob", new Airport(44, 120, 100), new Airport(50, 112, 110));
+
+        basket.add(hotelReservation1);
+        basket.add(flightReservation1);
+
+        Reservation[] expected = {hotelReservation1, flightReservation1};
+        Reservation[] output = basket.getProducts();
+
+        for (int i = 0; i < expected.length; i++) {
+            assertEquals(expected[i], output[i],
+                    "Basket: getProducts() returns the wrong order of reservations.");
+        }
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("Basket getNumOfReservations Test1")
+    void getNumOfReservations() {
+        Basket basket1 = new Basket();
+        Reservation reservation1 = new BasketTest.FakeReservation("Alex");
+        Reservation reservation2 = new BasketTest.FakeReservation("Bob");
+
+        basket1.add(reservation1);
+        basket1.add(reservation2);
+
+        assertEquals(2, basket1.getNumOfReservations(),
+                "Basket: getNumOfReservations() returns the wrong number of reservations");
+    }
+
+
+    @Test
+    @Tag("score:1") @DisplayName("Basket remove() Test1")
+    void remove() {
+        Basket basket1 = new Basket();
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+        FlightReservation reservation1 = new FlightReservation("Alex", airport1, airport2);
+
+        basket1.add(reservation1);
+
+        boolean test = basket1.remove(reservation1);
+
+        assertEquals(0, basket1.getNumOfReservations(),
+                "Basket: remove() didn't remove the reservation");
+
+        assertTrue(test, "Basket: remove() returns the wrong value");
+
+    }
+
+    @Test
+    @Tag("score:1") @DisplayName("Basket clear() Test1")
+    void clear() {
+        Basket basket1 = new Basket();
+        Reservation reservation1 = new BasketTest.FakeReservation("Alex");
+        basket1.add(reservation1);
+        basket1.add(reservation1);
+        basket1.clear();
+        assertEquals(0, basket1.getNumOfReservations(),
+                "Basket: clear() doesn't clear the array of reservations in the basket");
+    }
+
+
+    @Test
+    @Tag("score:1") @DisplayName("Basket getTotalCost Test1")
+    void getTotalCost() {
+        Basket basket1 = new Basket();
+        Airport airport1 = new Airport(44, 120, 100);
+        Airport airport2 = new Airport(50, 112, 110);
+        FlightReservation flightReservation1 = new FlightReservation("Alex", airport1, airport2);
+        basket1.add(flightReservation1);
+        basket1.add(flightReservation1);
+
+        assertEquals(11186, basket1.getTotalCost(),
+                "Basket: getTotalCost() returns the wrong cost.");
+    }
+
+    private static class FakeReservation extends Reservation {
+
+        public FakeReservation(String name) {
+            super(name);
+        }
+
+        @Override
+        public int getCost() {
+            return 0;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            return false;
+        }
+    }
+}
 
 
