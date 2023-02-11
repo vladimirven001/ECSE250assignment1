@@ -5,7 +5,7 @@ public class Basket {
     private Reservation[] r;
 
     public Basket() {
-        this.r = new Reservation[5];
+        this.r = new Reservation[0];
     }
 
     public Reservation[] getProducts() {

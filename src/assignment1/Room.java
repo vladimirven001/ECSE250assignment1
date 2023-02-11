@@ -35,9 +35,9 @@ public class Room {
         this.available = r.available;
     }
 
-    public String getType() { return this.type; }
+    public String getType() { return type; }
 
-    public int getPrice() { return this.cost; }
+    public int getPrice() { return cost; }
 
     public boolean getAvailability() { return this.available; }
 

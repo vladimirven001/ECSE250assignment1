@@ -22,7 +22,7 @@ public class HotelReservation extends Reservation {
             this.price = h.reserveRoom(this.type);
         }
         catch(NullPointerException e) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("A room of such type is not available.");
         }
 
     }
