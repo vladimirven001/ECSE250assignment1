@@ -32,8 +32,8 @@ public class HotelReservation extends Reservation {
     public int getCost() { return this.price * this.nights; }
 
     public boolean equals(Object o) {
-        if(o instanceof HotelReservation && ((HotelReservation)o).reservationName() == this.reservationName()
-                && ((HotelReservation)o).h == this.h && ((HotelReservation)o).type == this.type
+        if(o instanceof HotelReservation && (((HotelReservation)o).reservationName()).equalsIgnoreCase(this.reservationName())
+                && ((HotelReservation)o).h == this.h && (((HotelReservation)o).type).equalsIgnoreCase(this.type)
                 && ((HotelReservation)o).nights == this.nights && ((HotelReservation)o).getCost() == this.getCost()) {
             return true;
         }

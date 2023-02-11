@@ -30,7 +30,7 @@ public class FlightReservation extends Reservation {
 
     public boolean equals(Object o) {
 
-        if (o instanceof FlightReservation && ((FlightReservation)o).reservationName() == this.reservationName()
+        if (o instanceof FlightReservation && (((FlightReservation)o).reservationName()).equalsIgnoreCase(this.reservationName())
             && ((FlightReservation) o).departure == this.departure && ((FlightReservation) o).arrival == this.arrival) {
             return true;
         }
