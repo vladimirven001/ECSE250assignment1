@@ -8,13 +8,12 @@ public class Hotel {
 
     public Hotel(String name, Room[] r) {
         this.name = name;
-
+        String type;
         Room rCopy[] = new Room[r.length];
-
         for (int i = 0; i < r.length; i++) {
-            rCopy[i] = r[i];
+            type = r[i].getType();
+            rCopy[i] = new Room(type);
         }
-
         this.r = rCopy;
     }
 

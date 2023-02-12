@@ -9,8 +9,7 @@ public class Basket {
     }
 
     public Reservation[] getProducts() {
-        Reservation[] shallowCopy = new Reservation[r.length];
-        System.arraycopy(r, 0, shallowCopy, 0, r.length);
+        Reservation[] shallowCopy = r;
         return shallowCopy;
     }
 
