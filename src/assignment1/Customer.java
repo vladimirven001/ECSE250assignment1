@@ -44,22 +44,20 @@ public class Customer {
     }
 
     public int addToBasket(Hotel h, String type, int nights, boolean breakfast) {
-        Reservation r;
-        if (breakfast == true) {
-            r = new BnBReservation(name, h, type, nights);
+        if (breakfast) {
+            return this.addToBasket(new BnBReservation(name, h, type, nights));
         } else {
-            r = new HotelReservation(name, h, type, nights);
+            return this.addToBasket(new HotelReservation(name, h, type, nights));
         }
-        return this.addToBasket(r);
     }
 
     public int addToBasket(Airport a1, Airport a2) {
-        Reservation r;
         try {
-            r = new FlightReservation(name, a1, a2);
-        } finally {
+            return this.addToBasket(new FlightReservation(name, a1, a2));
+        } catch (IllegalArgumentException e) {
             return basket.getNumOfReservations();
         }
+
     }
 
     public boolean removeFromBasket(Reservation r) {
